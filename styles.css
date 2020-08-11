@@ -1,9 +1,19 @@
+section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
     width: 560px;
     height: 560px;
     border: solid black;
+
+    
 }
 
 .grid div {
@@ -13,6 +23,7 @@
 
 .pac-dot {
     background-color: green;
+    border-radius: 50%;
     border: 5px solid white;
     box-sizing: border-box;
 }
@@ -23,39 +34,110 @@
 }
 
 .power-pellet {
-    background-color: green;
+    /*background-color: green;*/
     border-radius: 10px;
+    background-image: url("./Media/palet.png");
 }
 
 /* Pacman */
 
 .pac-man {
-    background-color: yellow;
+    /*background-color: yellow;*/
     border-radius: 10px;
+    background-image: url("./Media/pacman.png");
+    animation-name: anipacman;
+    animation-duration: 2ms;
 }
+
+@keyframes anipacman{
+    from {background-image: url("./Media/pacman1.png");}
+    to {background-image: url("./Media/pacman2.png");}
+  }
 
 /* Ghosts */
 
 .blinky {
-    background-color: red;
+    /*background-color: red;*/
     border: 0px;
+    background-image: url("./Media/blinky.png");
+    animation-name: aniblinky;
+    animation-duration: 1ms;
 }
 
 .pinky {
-    background-color: pink;
+    /*background-color: pink;*/
     border: 0px;
+    background-image: url("./Media/pinky.png");
+    animation-name: anipinky;
+    animation-duration: 1ms;
 }
 .inky {
-    background-color: indigo;
+    /*background-color: indigo;*/
     border: 0px;
+    background-image: url("./Media/inky.png");
+    animation-name: aniinky;
+    animation-duration: 1ms;
 }
 
+
 .clyde {
-    background-color: orange;
+    /*background-color: orange;*/
     border: 0px;   
+    background-image: url("./Media/clyde.png");
+    animation-name: aniclyde;
+    animation-duration: 1ms;
 }
 
 .scared-ghost {
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
     border: 0px;
+    background-image: url("./Media/ghost-scary.png");
+    animation-name: aniscared;
+    animation-duration: 1ms;
+       
+    
+}
+
+
+/* The animation ghost */
+@keyframes aniscared{
+    from {background-image: url("./Media/ghost-scary1.png");}
+    to {background-image: url("./Media/ghost-scary.png");}
+  }
+
+  @keyframes aniblinky {
+    from {background-image: url("./Media/blinky1.png");}
+    to {background-image: url("./Media/blinky2.png");}
+  }
+
+  @keyframes anipinky {
+    from {background-image: url("./Media/pinky1.png");}
+    to {background-image: url("./Media/pinky2.png");}
+  }
+
+  @keyframes aniinky {
+    from {background-image: url("./Media/inky1.png");}
+    to {background-image: url("./Media/inky2.png");}
+  }
+
+  @keyframes aniclyde{
+    from {background-image: url("./Media/clyde1.png");}
+    to {background-image: url("./Media/clyde2.png");}
+  }
+/* Score section */
+
+body {
+    font-size: xx-large;
+    font-family: 'Arial Black';
+    color: blue;
+}
+
+.score {
+    font-size: xx-large;
+    font-family: 'Arial Black';
+    color: black;
+}
+h1 {
+    
+    position: relative;
 }

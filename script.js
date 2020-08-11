@@ -78,6 +78,11 @@ const layout = [
 
  squares[pacmanCurrentIndex].classList.add('pac-man')
 
+ //get the coordinates of pacman or blinky on the grid with X and Y axis
+ function getCoordinates(index) {
+    return [index % width, Math.floor(index / width)]
+  }
+
  /* agregamos movimiento a pacman */
  function movePacman(e) {
     squares[pacmanCurrentIndex].classList.remove('pac-man')
@@ -173,6 +178,7 @@ function pacDotEaten() {
 
   function moveGhost(ghost) {
     const directions =  [-1, +1, width, -width]
+    let ghostimerId  = NaN
     let direction = directions[Math.floor(Math.random() * directions.length)]
 
     ghost.timerId = setInterval(function() {
@@ -183,10 +189,22 @@ function pacDotEaten() {
           squares[ghost.currentIndex].classList.remove(ghost.className)
           squares[ghost.currentIndex].classList.remove('ghost', 'scared-ghost')
           //move into that space
+
+
+    
           ghost.currentIndex += direction
           squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
-      //else find a new random direction ot go in
-      } else direction = directions[Math.floor(Math.random() * directions.length)]
+      
+      
+      
+        }
+      
+      
+      
+      
+      
+          //else find a new random direction ot go in
+       else direction = directions[Math.floor(Math.random() * directions.length)]
 
       //if the ghost is currently scared
       if (ghost.isScared) {
