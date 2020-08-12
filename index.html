@@ -4,17 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    
     <script src="./script.js"></script>
     <title>Pac-Man - CarlosEdition</title>
 </head>
 <body>
     <main>
         <section>
-
+            <img src="./Media/top.png" alt="">
+            <h5><div class="counters"><div class="info"> Score: <span class="score"></span></div>
+                <div class="info"> Time: <span id="clockText" class="clockText"></span></div></div></h5>
             <div class="grid"></div>
-            <h3>Score: <span class="score"></span></h3>
+           
 
         </section>
     </main>
+
+    <div class="testover1">
+        <div class="box">
+            <p><img src="./Media/win.png" alt=""></p>
+           
+            <button type="button" class="btn btn-danger btn-lg" onclick="tryagain()">Try Again</button>
+        </div>
+    </div>
+
+    <div class="testover2">
+        <div class="box">
+            <p><img src="./Media/lost.png" alt=""></p>
+           
+            <button type="button" class="btn" onclick="tryagain()">Play Again</button>
+        </div>
+    </div>
 </body>
 </html>

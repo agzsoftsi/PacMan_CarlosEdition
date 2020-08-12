@@ -243,7 +243,11 @@ function pacDotEaten() {
       !squares[pacmanCurrentIndex].classList.contains('scared-ghost')) {
       ghosts.forEach(ghost => clearInterval(ghost.timerId))
       document.removeEventListener('keyup', movePacman)
-      setTimeout(function(){ alert("Game Over"); }, 500)
+      setTimeout(function(){ 
+        //alert("Game Over"); 
+        document.querySelector(".testover2").classList.add("show")
+    
+    }, 500)
     }
   }
 
@@ -252,8 +256,54 @@ function pacDotEaten() {
     if (score === 274) {
       ghosts.forEach(ghost => clearInterval(ghost.timerId))
       document.removeEventListener('keyup', movePacman)
-      setTimeout(function(){ alert("You have WON!"); }, 500)
+      setTimeout(function(){ 
+        
+        
+        //alert("You have WON!"); 
+        document.querySelector(".testover1").classList.add("show");
+      
+      }, 500)
     }
   }
 
 })
+
+
+
+window.onload=function(){
+
+  pantalla = document.getElementById("clockText");
+  start();
+
+}
+
+var isMarch = false; 
+var acumularTime = 0; 
+function start () {
+         if (isMarch == false) { 
+            timeInicial = new Date();
+            control = setInterval(cronometro,10);
+            isMarch = true;
+            }
+         }
+function cronometro () { 
+         timeActual = new Date();
+         acumularTime = timeActual - timeInicial;
+         acumularTime2 = new Date();
+         acumularTime2.setTime(acumularTime); 
+         cc = Math.round(acumularTime2.getMilliseconds()/10);
+         ss = acumularTime2.getSeconds();
+         mm = acumularTime2.getMinutes();
+         hh = acumularTime2.getHours()-19;
+         if (cc < 10) {cc = "0"+cc;}
+         if (ss < 10) {ss = "0"+ss;} 
+         if (mm < 10) {mm = "0"+mm;}
+         if (hh < 10) {hh = "0"+hh;}
+         pantalla.innerHTML = hh+" : "+mm+" : "+ss;
+         }
+
+         document.getElementById("TNum").innerText=questions.length;
+
+         function tryagain(){
+          window.location="index.html";
+          }
